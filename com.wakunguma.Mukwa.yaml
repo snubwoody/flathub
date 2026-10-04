@@ -5,6 +5,7 @@ sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
 command: mukwa
+rename-icon: mukwa
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -26,8 +27,7 @@ modules:
       - cargo fetch --offline
       - cargo build --offline -r -p mukwa
       - install -Dm755 target/release/mukwa /app/bin/mukwa
-      - sed -i 's/^Icon=.*/Icon=com.wakunguma.Mukwa/' crates/mukwa/resources/mukwa.desktop
-      - install -Dm644 crates/mukwa/resources/icons/app-icon.svg /app/share/icons/hicolor/scalable/apps/com.wakunguma.Mukwa.svg
+      - install -Dm644 crates/mukwa/resources/icons/app-icon.svg /app/share/icons/hicolor/scalable/apps/mukwa.svg
       - install -Dm644 crates/mukwa/resources/mukwa.desktop /app/share/applications/com.wakunguma.Mukwa.desktop
       - install -Dm644 crates/mukwa/resources/mukwa.metainfo.xml /app/share/metainfo/com.wakunguma.Mukwa.metainfo.xml
     sources:
